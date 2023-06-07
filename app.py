@@ -44,7 +44,7 @@ def abe():
         final.rename(columns = {'Subcategory':'Category'}, inplace = True)
         final['Address'].replace(r'\s+|\\n', ' ', regex=True, inplace=True)
         final = final.style.set_table_styles([dict(selector='th,td', props=[('text-align', 'center'),('border-style','solid'),('border-width','1px')])])
-        final.set_properties(**{'text-align': 'center'}).hide_index()
+        final.set_properties(**{'text-align': 'center'})
         success="List of GPCB verified vendors"
         return render_template('vendors.html', success=success,tables=[final.to_html(classes='data')], titles=final.columns.values)
     else:
