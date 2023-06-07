@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for,flash
 from supabase import create_client,Client
 import pandas as pd
-import numpy as np
+#import numpy as np
 import json
 from email.message import EmailMessage
 import ssl
