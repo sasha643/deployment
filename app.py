@@ -42,7 +42,6 @@ def abe():
     if final.empty == False:
         final = final.drop('Category', axis=1)
         final.rename(columns = {'Subcategory':'Category'}, inplace = True)
-        final.index = np.arange(1,len(final)+1)
         final['Address'].replace(r'\s+|\\n', ' ', regex=True, inplace=True)
         final = final.style.set_table_styles([dict(selector='th,td', props=[('text-align', 'center'),('border-style','solid'),('border-width','1px')])])
         final.set_properties(**{'text-align': 'center'}).hide_index()
